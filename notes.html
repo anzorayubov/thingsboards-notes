@@ -4,4 +4,22 @@
     Для перехода между состояниями дашборда
     self.ctx.stateController.openState( /* тут наименование состояния */ , {}, false)
     
+    // каждую секунду записываем время из ТВ в currentTimeInTB
+    setInterval(() => {
+        if (typeof self.ctx != 'undefined' && typeof self.ctx.dashboardTimewindow.history != 'undefined' && typeof self.ctx != 'undefined') { 
+            currentTimeInTB =  self.ctx.dashboardTimewindow.history.fixedTimewindow.startTimeMs+self.ctx.dashboardTimewindow.history.fixedTimewindow.endTimeMs
+        }
+    }, 1000)
+
+    // каждую секуду проверяем изменилась ли переменная
+    setInterval(() => {
+        if(currentTimeInTB != oldTime) {
+            if (typeof self.ctx != 'undefined' && typeof self.ctx.dashboardTimewindow.history != 'undefined' && typeof self.ctx != 'undefined') {
+                // do code
+            }
+
+        oldTime = currentTimeInTB;
+
+        }
+    }, 1000)
 </p>
