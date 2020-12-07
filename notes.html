@@ -3,23 +3,37 @@
 <p>
     Для перехода между состояниями дашборда
     self.ctx.stateController.openState( /* тут наименование состояния */ , {}, false)
-    
-    // каждую секунду записываем время из ТВ в currentTimeInTB
-    setInterval(() => {
-        if (typeof self.ctx != 'undefined' && typeof self.ctx.dashboardTimewindow.history != 'undefined' && typeof self.ctx != 'undefined') { 
-            currentTimeInTB =  self.ctx.dashboardTimewindow.history.fixedTimewindow.startTimeMs+self.ctx.dashboardTimewindow.history.fixedTimewindow.endTimeMs
+</p>
+
+<h1>Для отслеживания изменения переменной</h1>
+// каждую секунду записываем время из ТВ в currentTimeInTB
+setInterval(() => {
+    if (typeof self.ctx != 'undefined' && typeof self.ctx.dashboardTimewindow.history != 'undefined' && typeof self.ctx != 'undefined') { 
+        currentTimeInTB =  self.ctx.dashboardTimewindow.history.fixedTimewindow.startTimeMs+self.ctx.dashboardTimewindow.history.fixedTimewindow.endTimeMs
+    }
+}, 1000)
+// каждую секуду проверяем изменилась ли переменная
+setInterval(() => {
+    if(currentTimeInTB != oldTime) {
+        if (typeof self.ctx != 'undefined' && typeof self.ctx.dashboardTimewindow.history != 'undefined' && typeof self.ctx != 'undefined') {
+            // do code
         }
-    }, 1000)
+    oldTime = currentTimeInTB;
+    }
+}, 1000)
 
-    // каждую секуду проверяем изменилась ли переменная
-    setInterval(() => {
-        if(currentTimeInTB != oldTime) {
-            if (typeof self.ctx != 'undefined' && typeof self.ctx.dashboardTimewindow.history != 'undefined' && typeof self.ctx != 'undefined') {
-                // do code
-            }
-
-        oldTime = currentTimeInTB;
-
-        }
-    }, 1000)
+<h1>Приличный скролл, CSS</h1>
+<p>
+    ./ Ваш класс /::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    ./ Ваш класс /::-webkit-scrollbar {
+        width: 8px;
+        background-color: #F5F5F5;
+    }
+    ./ Ваш класс /::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #dadada;
+    }
 </p>
