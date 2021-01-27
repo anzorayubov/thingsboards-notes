@@ -27,7 +27,8 @@ Emitter = function() {};
 exports = {}
 exports.Emitter = Emitter;
 
-try {
+    // подписка
+    try {
         exports.Emitter.Emitter.subscribe('addNewPolygon', (data) => {
            console.log(data)
         })    
