@@ -1,3 +1,40 @@
+<h1>Observable with native JS for TB</h1>
+
+Emitter = function() {};
+
+(function() {
+    this.Emitter = {
+    listeners: {},
+    emit: (event, ...arg) => {
+        if (!Array.isArray(this.Emitter.listeners[event])) {
+            return false
+        }
+        this.Emitter.listeners[event].forEach(listener => {
+            listener(...arg)
+        })
+        return true
+    },
+    subscribe:(event, fn) => {
+        this.Emitter.listeners[event] = this.Emitter.listeners[event] || []
+        this.Emitter.listeners[event].push(fn)
+        return () => {
+            this.Emitter.listeners[event] = this.Emitter.listeners[event].filter(listener => listener !== fn)
+        }
+    }
+}
+}).call(Emitter);
+
+exports = {}
+exports.Emitter = Emitter;
+
+try {
+        exports.Emitter.Emitter.subscribe('addNewPolygon', (data) => {
+           console.log(data)
+        })    
+    } catch (e) {}
+
+------------------------------------------------------------------------------------------------------------------------------
+
 <h1>Observable with native JS</h1>
 <p>
 export class Emitter {
