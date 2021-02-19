@@ -6,22 +6,17 @@
             telemetry[key][i].value = parseInt(telemetry[key][i].value)
             data.push([telemetry[key][i].ts,telemetry[key][i].value])
        }
-       if(typeof self.ctx.flot.ctx.data == 'undefined'){
-        //   console.log('Вот тута ошибочка', self.ctx.flot.ctx)
+       if(typeof self.ctx.flot.ctx.data == 'undefined')
            return
-       }
+       
        for(let i=0; i< self.ctx.flot.ctx.data.length;i++){
            if(self.ctx.flot.ctx.data[i].dataKey.name !== key )//&& key !== 'state_1')
                 continue
 
             self.ctx.flot.ctx.data[i].data= data
-
        }
    }
-   self.ctx.flot.update();
-
-   accessRequest = true;
-    //   console.log('вернулся customStateForWork')
+   self.ctx.flot.update(); 
 }
 --------------------------------------------------------------------------------------------------------------------------------------------
 work with assetService
