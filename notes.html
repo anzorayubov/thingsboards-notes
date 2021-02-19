@@ -22,12 +22,15 @@
 work with assetService
 
 let $injector = self.ctx.$scope.$injector;
-    let assetService = $injector.get(self.ctx.servicesMap.get('assetService'));
-    
-    assetService.findByName(line).subscribe((response) => {})
-    assetService.saveAsset(asset).subscribe(() => {})
-    
-    self.ctx.updateAliases();
+let assetService = $injector.get(self.ctx.servicesMap.get('assetService'));
+let asset = {
+ id: /id/,
+ entityType: /type/ /ASSET
+}
+assetService.findByName(line).subscribe((response) => {})
+assetService.saveAsset(asset).subscribe(() => {})
+
+self.ctx.updateAliases();
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 <h1>Observable with native JS for TB</h1>
