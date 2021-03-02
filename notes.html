@@ -1,4 +1,21 @@
- function answer () {
+DEBOUNCE for function
+
+export function debounce(fn, wait) {
+    let timeout
+    return function(...args) {
+        const later = () => {
+        clearTimeout(timeout)
+        // eslint-disable-next-line
+        fn.apply(this, args)
+    }
+    clearTimeout(timeout)
+        timeout = setTimeout(later, wait)
+    }
+}
+
+----------------------------------------------------------------------------
+// присвоить данные из запроса
+function answer () {
    let telemetry = JSON.parse(xhr.responseText)
    for(let key in telemetry){
        let data = []
@@ -18,7 +35,7 @@
    }
    self.ctx.flot.update(); 
 }
---------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 work with assetService
 
 let $injector = self.ctx.$scope.$injector;
@@ -31,7 +48,7 @@ assetService.findByName(line).subscribe((response) => {})
 assetService.saveAsset(asset).subscribe(() => {})
 
 self.ctx.updateAliases();
---------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 <h1>Observable with native JS for TB</h1>
 
@@ -69,7 +86,7 @@ exports.Emitter = Emitter;
         })    
     } catch (e) {}
 
-------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
 
 <h1>Observable with native JS</h1>
 <p>
