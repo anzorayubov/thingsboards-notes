@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="68efe983-7891-4feb-a25d-d23289e23ad2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes.html" beforeDir="false" afterPath="$PROJECT_DIR$/notes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +49,7 @@
       <workItem from="1606288056349" duration="92000" />
       <workItem from="1608737001190" duration="211000" />
       <workItem from="1614690448179" duration="388000" />
+      <workItem from="1616152854833" duration="345000" />
     </task>
     <servers />
   </component>
@@ -65,5 +66,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

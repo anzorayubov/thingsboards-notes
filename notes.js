@@ -1,4 +1,5 @@
-// DEBOUNCE for function
+// ----------------------- DEBOUNCE for function ---------------------------------
+
 export function debounce(fn, wait) {
     let timeout
     return function (...args) {
@@ -11,8 +12,8 @@ export function debounce(fn, wait) {
     }
 }
 
-// ----------------------------------------------------------------------------
-// присвоить данные из запроса
+// -------------------- Присвоить данные из запроса ---------------------------------
+
 function answer() {
     let telemetry = JSON.parse(xhr.responseText)
     for (let key in telemetry) {
@@ -34,8 +35,7 @@ function answer() {
     self.ctx.flot.update();
 }
 
-// -------------------------------------------------------------------------------------------------
-// work with assetService
+// ----------------------- Work with assetService ---------------------------------
 
 let $injector = self.ctx.$scope.$injector;
 let assetService = $injector.get(self.ctx.servicesMap.get('assetService'));
@@ -47,9 +47,8 @@ assetService.findByName(line).subscribe((response) => {})
 assetService.saveAsset(asset).subscribe(() => {})
 
 self.ctx.updateAliases();
-// ----------------------------------------------------------------------------------------------------
 
-// Observable with native JS for TB
+// -------------------- Observable with native JS for TB ------------------------------
 
 Emitter = function () {};
 
@@ -86,9 +85,8 @@ try {
 } catch (e) {
 }
 
------------------------------------------------------------------------------------------------
+// ------------------------- Observable with native JS ---------------------------------
 
-// Observable with native JS
 export class Emitter {
     constructor() {
         this.listeners = {}
@@ -114,12 +112,13 @@ export class Emitter {
     }
 }
 
-// How work with services
+// ---------------------- How work with services --------------------------------
 
-//    Для перехода между состояниями дашборда
+// ------------------- Для перехода между состояниями дашборда ----------------------
+
 self.ctx.stateController.openState( /* тут наименование состояния */, {}, false)
 
-// Для отслеживания изменения переменной
+// --------------------------- Для отслеживания изменения переменной ---------------------------
 // каждую секунду записываем время из ТВ в currentTimeInTB
 setInterval(() => {
     if (typeof self.ctx != 'undefined' && typeof self.ctx.dashboardTimewindow.history != 'undefined' && typeof self.ctx != 'undefined') {
@@ -136,7 +135,7 @@ setInterval(() => {
     }
 }, 1000)
 
-// Приличный скролл, CSS
+// --------------------------- Приличный скролл, CSS ---------------------------
 
 ./Ваш класс /:: - webkit - scrollbar - track {
     border - radius: 10px;
