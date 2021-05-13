@@ -137,15 +137,15 @@ setInterval(() => {
 
 // --------------------------- Приличный скролл, CSS ---------------------------
 
-./Ваш класс /:: - webkit - scrollbar - track {
-    border - radius: 10px;
-    background - color: #fff;
+./Ваш класс /::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #fff;
 }
-./ Ваш класс /:: - webkit - scrollbar {
+./ Ваш класс /::-webkit-scrollbar {
     width: 8px;
-    background - color: #F5F5F5;
+    background-color: #F5F5F5;
 }
-./ Ваш класс /:: - webkit - scrollbar - thumb {
-    border - radius: 10px;
-    background - color: #dadada;
+./ Ваш класс /::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #dadada;
 }
